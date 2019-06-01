@@ -1,3 +1,29 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 html{
-    background-color:red;
+    background-color:rgb(177, 169, 169);
+}
+
+footer, header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1em;
+    background-color: blue;
+    color: white;
+}
+
+main{
+    min-height: 50vh;
+    padding-left: 5em;
+}
+
+.wrapper{
+    width: 60%;
+    margin: 10em auto;
+    border-radius: 10px;
 }
