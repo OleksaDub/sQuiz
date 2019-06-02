@@ -15,12 +15,14 @@
         </header>
 
         <main>
-            <form id="questionForm" action="">
-                
+            <form name="questionForm" method="get" action="" >
+                <div id="radiobuttons"></div>
+                <input type="button" value="Submit" 
+                    onclick="getCheckedValue(document.forms['questionForm'].elements['question']);">
             </form>
         </main>
 
-        <footer><h1>Your score: </h1></footer>
+        <footer><h1>Your score: <span id="score"></span></h1></footer>
     </div>
     <script src="script.js"></script>
 </body>
