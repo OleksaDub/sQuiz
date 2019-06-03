@@ -1,6 +1,30 @@
 let score = 0;
 let point = 1;
 let q;
+
+const questions = [
+    {
+        quest: "What is this?",
+        ans: [
+            "Nothing","Something", "Not your business", "Who knows"
+        ],
+        correct: 2
+    },
+    {
+        quest: "What color is blood?",
+        ans: [
+            "Green","Red", "Blue", "Who knows"
+        ],
+        correct: 1
+    },
+    {
+        quest: "How much is the fish?",
+        ans: [
+            "$19.90","$21.90", "Not your business", "Who knows"
+        ],
+        correct: 0
+    }];
+
 const scoreboard = document.getElementById("score");
 scoreboard.innerText = score;
 
@@ -8,6 +32,8 @@ scoreboard.innerText = score;
 // return the value of the radio button that is checked
 // return an empty string if none are checked, or
 // there are no radio buttons
+//https://www.somacon.com/p143.php
+
 function getCheckedValue(radioObj) {
 	if(!radioObj)
 		return "";
@@ -29,6 +55,10 @@ function getCheckedValue(radioObj) {
 	return "";
 }
 
+function chooseQuestion() {
+    return Math.floor(Math.random() * questions.length)
+}
+
 function refreshScoreBoard(checkedButton) {
     if(checkedButton == q["correct"]) {
         score += point;
@@ -39,19 +69,12 @@ function refreshScoreBoard(checkedButton) {
     return;
 }
 
-const questions = [
-    {
-        quest: "What is this?",
-        ans: [
-            "Nothing","Something", "Not your business", "Who knows"
-        ],
-        correct: 2
-    }];
 
 const form = document.getElementById("radiobuttons");
 
 function playGame() {
-    q = questions[0];
+    let randQuest = chooseQuestion();
+    q = questions[randQuest];
 
     form.innerHTML += `<h3>${q["quest"]}</h3>`;
     for (let i = 0; i < q["ans"].length; i++) {
