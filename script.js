@@ -78,7 +78,7 @@ function playGame() {
 
     form.innerHTML += `<h3>${q["quest"]}</h3>`;
     for (let i = 0; i < q["ans"].length; i++) {
-        form.innerHTML += `<input type="radio" name="question" value="${i}">${q["ans"][i]}<br>`;      
+        form.innerHTML += `<input type="radio" name="question" value="${i}">${q["ans"][i]} <br>`;      
     }
     
     let answer = getCheckedValue(document.forms['questionForm'].elements['question']);

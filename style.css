@@ -17,7 +17,23 @@ footer, header{
     color: white;
 }
 
+form{
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+input[type="button"]{
+    margin-top: 1em;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
 main{
+    display: flex;
+    align-items: center;
     min-height: 50vh;
     padding-left: 5em;
 }
