@@ -34,8 +34,17 @@ input[type="button"]{
 main{
     display: flex;
     align-items: center;
-    min-height: 50vh;
+    height: 40vh;
     padding-left: 5em;
+}
+
+#btn-question{
+    display: none;
+}
+
+#btn-start{
+    padding: 1.5em 2em;
+    margin-bottom: 3em;
 }
 
 .wrapper{

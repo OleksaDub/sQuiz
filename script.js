@@ -28,6 +28,11 @@ const questions = [
 const scoreboard = document.getElementById("score");
 scoreboard.innerText = score;
 
+const qFormBtn = document.getElementById("btn-question");
+const start = document.getElementById("btn-start");
+start.addEventListener("click", playGame);
+
+const form = document.querySelector("form");
 
 // return the value of the radio button that is checked
 // return an empty string if none are checked, or
@@ -69,21 +74,20 @@ function refreshScoreBoard(checkedButton) {
     return;
 }
 
-
-const form = document.getElementById("radiobuttons");
+const radioBtns = document.getElementById("radiobuttons");
 
 function playGame() {
     let randQuest = chooseQuestion();
     q = questions[randQuest];
 
-    form.innerHTML += `<h3>${q["quest"]}</h3>`;
+    radioBtns.innerHTML = "";
+    radioBtns.innerHTML += `<h3>${q["quest"]}</h3>`;
     for (let i = 0; i < q["ans"].length; i++) {
-        form.innerHTML += `<input type="radio" name="question" value="${i}">${q["ans"][i]} <br>`;      
+        radioBtns.innerHTML += `<input type="radio" name="question" value="${i}">${q["ans"][i]} <br>`;      
     }
-    
+    qFormBtn.style.display = "block";
+
     let answer = getCheckedValue(document.forms['questionForm'].elements['question']);
     //let answer = document.querySelector("input[name='question']:checked").val();    
     
 }
-
-playGame();
