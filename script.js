@@ -1,3 +1,4 @@
+let isGameOn = true;
 let score = 0;
 let point = 1;
 let q;
@@ -26,8 +27,6 @@ const questions = [
     }];
 
 const scoreboard = document.getElementById("score");
-scoreboard.innerText = score;
-
 const qFormBtn = document.getElementById("btn-question");
 const start = document.getElementById("btn-start");
 start.addEventListener("click", playGame);
@@ -53,7 +52,7 @@ function getCheckedValue(radioObj) {
             var checkedButton = radioObj[i].value;
 
             refreshScoreBoard(checkedButton);
-
+            nextQuestion();
 			return checkedButton;
 		}
 	}
@@ -76,9 +75,8 @@ function refreshScoreBoard(checkedButton) {
 
 const radioBtns = document.getElementById("radiobuttons");
 
-function playGame() {
-    let randQuest = chooseQuestion();
-    q = questions[randQuest];
+function nextQuestion() {
+    q = questions[chooseQuestion()];
 
     radioBtns.innerHTML = "";
     radioBtns.innerHTML += `<h3>${q["quest"]}</h3>`;
@@ -86,8 +84,10 @@ function playGame() {
         radioBtns.innerHTML += `<input type="radio" name="question" value="${i}">${q["ans"][i]} <br>`;      
     }
     qFormBtn.style.display = "block";
+}
 
-    let answer = getCheckedValue(document.forms['questionForm'].elements['question']);
-    //let answer = document.querySelector("input[name='question']:checked").val();    
-    
+function playGame() {
+    score = 0
+    scoreboard.innerText = score;
+    nextQuestion();
 }
