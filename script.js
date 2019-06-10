@@ -67,10 +67,19 @@ function refreshScoreBoard(checkedButton) {
     if(checkedButton == q["correct"]) {
         score += point;
         scoreboard.innerText = score;
+        setRedBkg();
     } else {
         scoreboard.innerText = "Looser!";
     }
     return;
+}
+
+function setRedBkg() {
+    let html = document.querySelector("html");
+    html.classList.toggle("red-bkg");
+    setTimeout(function(){
+        html.classList.toggle("red-bkg");
+    }, 300);
 }
 
 const radioBtns = document.getElementById("radiobuttons");
