@@ -100,3 +100,15 @@ function playGame() {
     scoreboard.innerText = score;
     nextQuestion();
 }
+
+// User's Question Form
+
+const addQuestion = document.getElementById("btn-addQuestion");
+addQuestion.addEventListener("click", function(){
+    document.getElementById("answerForm").style.display = "block";
+})
+
+document.getElementById("btn-userQuestion").addEventListener("click",
+        function(){
+            document.getElementById("answerForm").style.display = "none";
+        })

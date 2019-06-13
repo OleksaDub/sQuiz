@@ -46,7 +46,7 @@ main{
     display: none;
 }
 
-#btn-start{
+#btn-start, #btn-addQuestion{
     padding: 1.5em 2em;
     margin-bottom: 3em;
 }
@@ -55,4 +55,9 @@ main{
     width: 60%;
     margin: 10em auto;
     border-radius: 10px;
+}
+
+/* Add User's Question Form*/
+#answerForm{
+    display: none;
 }
