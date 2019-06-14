@@ -103,12 +103,21 @@ function playGame() {
 
 // User's Question Form
 
-const addQuestion = document.getElementById("btn-addQuestion");
+const addQuestion = document.getElementById("btn-addQuestion"),
+      modal       = document.getElementById("modal"),
+      modalClose  = document.getElementById("modal-close"),
+      userQuestion = document.getElementById("btn-userQuestion");
+
 addQuestion.addEventListener("click", function(){
-    document.getElementById("answerForm").style.display = "block";
+    modal.style.display = "block";
 })
 
-document.getElementById("btn-userQuestion").addEventListener("click",
-        function(){
-            document.getElementById("answerForm").style.display = "none";
-        })
+modalClose.addEventListener("click", function(){
+    modal.style.display = "none";
+});
+
+userQuestion.addEventListener("click", function(){
+    modal.style.display = "none";
+});
+
+    

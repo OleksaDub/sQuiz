@@ -25,14 +25,20 @@
         <button id="btn-addQuestion">Add new question!</button>
 
 
-        <form name="answerForm" method="get" id="answerForm" >
-            <input type="text" name="" id="usersQuestion" placeholder="Enter your question"><br>
-            <input type="text" name="" id="0" placeholder="Answer 1"><br>
-            <input type="text" name="" id="1" placeholder="Answer 2"><br>
-            <input type="text" name="" id="2" placeholder="Answer 3"><br>
-            <input type="text" name="" id="3" placeholder="Answer 4"><br>
-            <input type="button" value="Submit" id="btn-userQuestion">
-        </form>
+        <div id="modal">
+            <div id="modal-backdrop"></div>
+            <div id="modal-body">
+                <button id="modal-close">close</button>
+                <form name="answerForm" method="get" id="answerForm" >
+                    <input type="text" name="" id="usersQuestion" placeholder="Enter your question"><br>
+                    <input type="text" name="" id="0" placeholder="Answer 1"><br>
+                    <input type="text" name="" id="1" placeholder="Answer 2"><br>
+                    <input type="text" name="" id="2" placeholder="Answer 3"><br>
+                    <input type="text" name="" id="3" placeholder="Answer 4"><br>
+                    <input type="button" value="Submit" id="btn-userQuestion">
+                </form>
+            </div>
+        </div>
 
         <footer><h1>Your score: <span id="score"></span></h1></footer>
     </div>
