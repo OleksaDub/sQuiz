@@ -117,7 +117,30 @@ modalClose.addEventListener("click", function(){
 });
 
 userQuestion.addEventListener("click", function(){
-    modal.style.display = "none";
+    let usQ = document.getElementById("usersQuestion").value;
+    console.log(usQ);
+    let info = document.getElementById("info");
+    info.innerText = '';
+    let usAnswers = document.getElementsByClassName("user-answer");
+    let answers = [];
+    for (let i = 0; i < usAnswers.length; i++) {
+        if(!usAnswers[i].value){
+            info.innerText = "You must fill all fields!";
+            return;
+        }
+        answers.push(usAnswers[i].value);   
+        console.log(usAnswers[i].value);
+    }
+    //if(!usAnswers.every()) console.log("!!!!WARNING!!!!!!!!!");
+
+    let rightAns = document.getElementById("right-answer");
+    var strUser = rightAns.options[rightAns.selectedIndex].value;
+    if(strUser){
+        console.log(strUser);
+    } else {
+        console.log("Warning!")
+    }
+    //modal.style.display = "none";
 });
 
     

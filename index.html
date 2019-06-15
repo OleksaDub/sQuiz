@@ -30,12 +30,22 @@
             <div id="modal-body">
                 <button id="modal-close">close</button>
                 <form name="answerForm" method="get" id="answerForm" >
-                    <input type="text" name="" id="usersQuestion" placeholder="Enter your question"><br>
-                    <input type="text" name="" id="0" placeholder="Answer 1"><br>
-                    <input type="text" name="" id="1" placeholder="Answer 2"><br>
-                    <input type="text" name="" id="2" placeholder="Answer 3"><br>
-                    <input type="text" name="" id="3" placeholder="Answer 4"><br>
+                    <input type="text" name="" id="usersQuestion" placeholder="Enter your question" required><br>
+                    <input type="text" class="user-answer" id="0" placeholder="Answer 1"><br>
+                    <input type="text" class="user-answer" id="1" placeholder="Answer 2"><br>
+                    <input type="text" class="user-answer" id="2" placeholder="Answer 3"><br>
+                    <input type="text" class="user-answer" id="3" placeholder="Answer 4"><br>
+
+                    <label for="">Correct answer: </label>
+                    <select required id="right-answer">
+                        <option value=""></option>
+                        <option value="0">1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                    </select> <br>
                     <input type="button" value="Submit" id="btn-userQuestion">
+                    <p id="info"></p>
                 </form>
             </div>
         </div>
